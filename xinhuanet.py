@@ -164,26 +164,6 @@ def crawl_page_with_selenium(url, max_retries=3):
 #     return news_list
 
 
-# def get_news_content(url):
-#     """
-#     获取新闻详情页正文内容
-#     """
-#     driver.get(url)
-#     wait_time = random.uniform(5,8)
-#     time.sleep(wait_time)
-#
-#     try:
-#         # 尝试通过 ID 查找 "detailContent"
-#         content_elem = driver.find_element(By.ID, "detailContent")
-#     except Exception as e:
-#         print(f"未找到 ID 为 'detailContent' 的元素，尝试使用 class 名称 'detail'")
-#         try:
-#             # 如果 ID 找不到，尝试通过 class 查找 "detail"
-#             content_elem = driver.find_element(By.ID, "detail")
-#         except Exception as e:
-#             print(f"无法提取正文: {url}, 错误: {e}")
-#             return ""
-#     return content_elem.text.strip()
 def get_news_content(url):
     """
     获取新闻详情页正文内容（适配新华网不同页面结构）
