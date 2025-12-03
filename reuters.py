@@ -15,18 +15,24 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 # ==================== 配置区（你只需要改这里） ====================
-BASE_URL = "https://www.reuters.com/site-search/?query=Hegseth&date=past_year&sort=relevance"
-OFFSET = 200  # 你想从第几条开始？0、20、40、60... 手动改这里。（0代表第一页，20代表第二页，每页20条）
+# BASE_URL = "https://www.reuters.com/site-search/?query=Hegseth&date=past_year&sort=relevance"
+# BASE_URL = "https://www.reuters.com/site-search/?query=Taiwan+Strait&sort=relevance&date=past_year"
+BASE_URL = "https://www.reuters.com/site-search/?query=taiwan+us&date=past_year&sort=relevance"
+BASE_URL = "https://www.reuters.com/site-search/?query=taiwan+eu&date=past_year&sort=relevance"
+OFFSET = 40  # 你想从第几条开始？0、20、40、60... 手动改这里。（0代表第一页，20代表第二页，每页20条）
 PAGE_SIZE = 20  # 固定20条，别改
-OUTPUT_DIR = "reuters_hegseth_数据包"  # 所有文件都会保存在这个文件夹
+# OUTPUT_DIR = "reuters_hegseth_数据包"  # 所有文件都会保存在这个文件夹
+# OUTPUT_DIR = "reuters_TaiwanStrait_数据包"
+OUTPUT_DIR = "reuters_TaiwanEU_数据包"
 
 # 自动创建文件夹
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 # 输出文件名：每页一个文件 + 总合并文件
 PAGE_FILE = os.path.join(OUTPUT_DIR, f"offset_{OFFSET}.xlsx")
-TOTAL_FILE = os.path.join(OUTPUT_DIR, "【总表】reuters_hegseth_all.xlsx")
-
+# TOTAL_FILE = os.path.join(OUTPUT_DIR, "【总表】reuters_hegseth_all.xlsx")
+# TOTAL_FILE = os.path.join(OUTPUT_DIR, "【总表】reuters_TaiwanStrait_all.xlsx")
+TOTAL_FILE = os.path.join(OUTPUT_DIR, "【总表】reuters_TaiwanEU_all.xlsx")
 
 # ===================================================================
 
